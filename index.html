@@ -5,6 +5,9 @@
         <title>게시판</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="js/data.js"></script>
+        <script defer src="js/render.js"></script>
+        <script defer src="js/list.js"></script>
     </head>
     <body>
         <header>
@@ -19,29 +22,7 @@
         <main>
             <h1>게시판</h1>
             <p id="list-message" role="status">게시글 목록</p>
-            <ul>
-                <li>
-                    <a href="detail.html">첫 번째 게시글</a>
-                    <div>
-                        <span>학생1</span>
-                        <span>2026-10-01</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="detail.html">두 번째 게시글</a>
-                    <div>
-                        <span>학생2</span>
-                        <span>2026-10-02</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="detail.html">세 번째 게시글</a>
-                    <div>
-                        <span>학생3</span>
-                        <span>2026-10-03</span>
-                    </div>
-                </li>
-            </ul>
+            <ul id="post-list"></ul>
 
             <div class="pagination">
                 <button id="previous-page" type="button">이전</button>

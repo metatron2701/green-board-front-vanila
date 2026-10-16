@@ -91,7 +91,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 16px;
-    background-image: url('images/leaf.svg');
+    background-image: url('../images/leaf.svg');
     background-repeat: no-repeat;
     background-position: right top;
 }
