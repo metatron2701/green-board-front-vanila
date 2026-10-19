@@ -26,6 +26,8 @@ async function login(event) {
         }
 
         localStorage.setItem("accessToken", result.data.accessToken);
+
+        location.href = "index.html";
     } catch (error) {
         message.textContent = error.message;
     }

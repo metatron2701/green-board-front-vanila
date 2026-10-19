@@ -1,3 +1,5 @@
+requireLogin();
+
 const form = document.querySelector("#post-form");
 
 form.addEventListener("submit", function(event) {
