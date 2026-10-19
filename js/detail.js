@@ -13,3 +13,26 @@ if (post != undefined) {
     document.querySelector("#post-content").textContent = "";
     document.querySelector("#comments-section").hidden = true;
 }
+
+document.querySelector("#comment-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const content = document.querySelector("#comment-content").value.trim();
+
+    if (!post || !content || !content.leagth > 255) {
+        document.querySelector("#comment-message").textContent =
+        "댓글은 1 ~ 255자로 입력하세요."
+        return;
+    }
+
+    comments.push({
+        id: getCommentNetxId(),
+        boardId: postId,
+        content: content,
+        author: "실습 사용자"
+    });
+
+    saveLocal();
+
+    document.querySelector("#comment-content").value = "";
+    renderComments(comments.filter(comment => comment.boardId === postId));
+})
