@@ -10,6 +10,8 @@ async function savePost(event) {
     const title = form.elements.title.value.trim();
     const content = form.elements.content.value.trim();
 
+    const button = form.querySelector("button[type='submit']");
+
     const formMessage = document.querySelector("#form-message");
 
     if (title.length < 10 || title.length > 50 || content.length < 10) {
@@ -17,12 +19,21 @@ async function savePost(event) {
         return;
     }
 
+    if (button.disable) {
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "저장 중...";
+
     try {
         await apiRequest("/board", "POST", {title, content})
         // index.html 경로로 이동
-        location.href = "index.html";
+        location.replace("index.html");
     } catch(error) {
         formMessage.textContent = error.message;
+    } finally {
+        button.disabled = false;
     }
 }
 

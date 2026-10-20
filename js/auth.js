@@ -15,6 +15,14 @@ function requireLogin() {
 }
 
 async function logout() {
+    const button = document.querySelector(".logout-button")
+    if (button.disabled) {
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "로그아웃 중..."
+
     try {
         const accessToken = localStorage.getItem("accessToken")
         await apiRequest("/user/logout", "POST", {accessToken})
@@ -26,6 +34,8 @@ async function logout() {
     } catch(error) {
         // #nav-message.textContent -> alert로 대체
         alert(error.message);
+    } finally {
+        button.disabled = false;
     }
 }
 

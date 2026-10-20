@@ -2,6 +2,8 @@ const previousButton = document.querySelector("#previous-page");
 const nextButton = document.querySelector("#next-page");
 
 async function loadPosts(page = currentPage) {
+    const message = document.querySelector("#list-message");
+
     try {
         const data = await apiRequest(`/board?page=${page}&size=10`);
         
@@ -9,7 +11,7 @@ async function loadPosts(page = currentPage) {
         currentPage = data.number;
         totalPages = data.totalPages;
 
-        document.querySelector("#list-message").textContent =
+        message.textContent =
             `전체 ${data.totalElements}개`;
 
         let pageNumber = "";
@@ -25,7 +27,7 @@ async function loadPosts(page = currentPage) {
         // 현재 마지막 페이지인 경우 다음 버튼 비활성화
         nextButton.disabled = currentPage + 1 >= totalPages;
     } catch (error) {
-        document.querySelector("#list-message").textContent = error.message;
+        message.textContent = error.message;
     }
 }
 
