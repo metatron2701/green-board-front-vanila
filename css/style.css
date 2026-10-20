@@ -53,7 +53,7 @@ li {
     border-bottom: 1px solid #dce4dc;
 }
 
-button, input, textarea {
+button, input, textarea, .login-link {
     padding: 10px 14px;
     border: 1px solid #8b9d8c;
     border-radius: 6px;
@@ -91,7 +91,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 16px;
-    background-image: url('images/leaf.svg');
+    background-image: url("../images/leaf.svg");
     background-repeat: no-repeat;
     background-position: right top;
 }
