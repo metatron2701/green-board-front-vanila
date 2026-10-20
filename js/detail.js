@@ -7,18 +7,32 @@ async function loadPost() {
         const post = await apiRequest(`/board/${postId}`)
         renderPost(post);
         document.querySelector("#post-message").textContent = "";
+        return true;
     } catch (error) {
         document.querySelector("#post-title").textContent = "게시글 조회 실패";
         document.querySelector("#post-content").textContent = "";
         document.querySelector("#post-message").textContent = error.message;
+        return false;
     }
 }
-document.querySelector("#comments-section").hidden = true;
+
+async function loadComments() {
+    try {
+        const comments = await apiRequest(`/board/${postId}/comment`);
+        renderComments(comments);
+    } catch(error) {
+        document.querySelector("#comment-message").textContent = error.message;
+    }
+}
 
 
 if (requireLogin()) {
     if (Number.isSafeInteger(postId) && postId > 0) {
-        loadPost();
+        loadPost().then(function (success) {
+            if (success) {
+                loadComments();
+            }
+        });
 
         // // 지금 postId에 해당하는 댓글만 출력하도록 필터링
         // let filteredComments = comments.filter(
