@@ -59,22 +59,22 @@ button, input, textarea {
     border-radius: 6px;
 }
 
-button {
+button, .login-link {
     background: #23663d;
     color: white;
     cursor: pointer;
     transition: background-color 0.15s, transform 0.15s;
 }
 
-button:hover:not(:disabled) {
+button:hover:not(:disabled), .login-link:hover:not(:disabled) {
     background: #174c2c;
 }
 
-button:active:not(:disabled) {
+button:active:not(:disabled), .login-link:active:not(:disabled) {
     transform: scale(0.98);
 }
 
-button:disabled {
+button:disabled, .login-link:disabled {
     background: #647269;
     cursor: not-allowed;
 }
@@ -91,7 +91,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 16px;
-    background-image: url('../images/leaf.svg');
+    background-image: url('images/leaf.svg');
     background-repeat: no-repeat;
     background-position: right top;
 }

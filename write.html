@@ -2,16 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>로그인 | 게시판</title>
+        <title>게시판</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script defer src="js/storage.js"></script>
         <script defer src="js/auth.js"></script>
+        <script defer src="js/storage.js"></script>
         <script defer src="js/write.js"></script>
     </head>
     <body>
         <header>
-            <a class="board" href="index.html">게시판</a>
+            <a class="brand" href="index.html">게시판</a>
             <nav>
                 <a href="index.html">게시판</a>
                 <a class="write-link" href="write.html">글쓰기</a>
@@ -23,11 +23,11 @@
             <h1>글쓰기</h1>
             <form id="post-form">
                 <label>제목</label>
-                <input id="title" type="text" required placeholder="제목을 입력하세요.">
+                <input id="title" type="text" required>
                 <label>본문</label>
-                <textarea id="content" required placeholder="내용을 입력하세요."></textarea>
+                <textarea id="content" required></textarea>
                 <p id="form-message"></p>
-                <button type="submit">게시물 등록</button>
+                <button type="submit">게시글 등록</button>
                 <a href="index.html">목록으로</a>
             </form>
         </main>
