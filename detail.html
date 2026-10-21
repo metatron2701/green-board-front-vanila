@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>게시판</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="js/auth.js"></script>
+        <script defer src="js/api.js"></script>
+        <script defer src="js/render.js"></script>
+        <script defer src="js/detail.js"></script>
+    </head>
+    <body>
+        <header>
+            <!--헤더 영역-->
+            <a class="brand" href="index.html">게시판</a>
+            <nav>
+                <a href="index.html">게시판</a>
+                <a class="write-link" href="write.html">글쓰기</a>
+                <a class="login-link" href="login.html">로그인</a>
+                <button class="logout-button" type="button">로그아웃</button>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h1 id="post-title"></h1>
+                <p id="post-meta" class="meta"></p>
+                <p id="post-content"></p>
+                <p id="post-message"></p>
+                <button id="retry-post" type="button" hidden>게시물 다시 로드</button>
+            </article>
+            <a href="index.html">목록으로</a>
+            <section id="comments-section">
+                <h2>댓글</h2>
+                <!--댓글 목록 영역-->
+                <p id="comment-message"></p>
+                <ul id="comment-list">
+                </ul>
+                <!--댓글 입력창-->
+                <form id="comment-form">
+                    <lable>댓글 내용</lable>
+                    <textarea id="comment-content" name="content" required placeholder="댓글을 입력하세요"></textarea>
+                    <button type="submit">댓글 등록</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            게시판 실습
+        </footer>
+    </body>
+</html>
