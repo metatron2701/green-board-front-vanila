@@ -53,28 +53,28 @@ li {
     border-bottom: 1px solid #dce4dc;
 }
 
-button, input, textarea, .login-link {
+button, input, textarea {
     padding: 10px 14px;
     border: 1px solid #8b9d8c;
     border-radius: 6px;
 }
 
-button, .login-link {
+button {
     background: #23663d;
     color: white;
     cursor: pointer;
     transition: background-color 0.15s, transform 0.15s;
 }
 
-button:hover:not(:disabled), .login-link:hover:not(:disabled) {
+button:hover:not(:disabled) {
     background: #174c2c;
 }
 
-button:active:not(:disabled), .login-link:active:not(:disabled) {
+button:active:not(:disabled) {
     transform: scale(0.98);
 }
 
-button:disabled, .login-link:disabled {
+button:disabled {
     background: #647269;
     cursor: not-allowed;
 }
